@@ -25,7 +25,6 @@
         </div>
     </div>
     {% endfor %}
-    <!-- 답변 등록 -->
     <form action="{% url 'pybo:answer_create' question.id %}" method="post" class="my-3">
         {% csrf_token %}
         <!-- 오류표시 Start -->

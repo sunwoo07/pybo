@@ -41,6 +41,7 @@
         {% endif %}
         <!-- 페이지리스트 -->
         {% for page_number in question_list.paginator.page_range %}
+        {% if page_number >= question_list.number|add:-5 and page_number <= question_list.number|add:5 %}
         {% if page_number == question_list.number %}
         <li class="page-item active" aria-current="page">
             <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
@@ -49,6 +50,7 @@
         <li class="page-item">
             <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
         </li>
+        {% endif %}
         {% endif %}
         {% endfor %}
         <!-- 다음페이지 -->
